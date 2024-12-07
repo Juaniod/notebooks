@@ -20,3 +20,18 @@ if hist_button: # al hacer clic en el botón
         
             # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
+
+
+if st.checkbox('Generar grafico de dispersion'): # si la casilla de verificación está seleccionada
+    st.write('Construir un grafico de dispersion para la columna odómetro')
+
+    fig = px.scatter(car_data, x='odometer', y='price')
+    st.plotly_chart(fig)
+
+
+if st.checkbox('Generar grafico de barra'): # si la casilla de verificación está seleccionada
+    st.write('Construir un grafico de barra para la columna odómetro')
+
+    fig = px.bar(car_data, x='odometer', y='price')
+    st.plotly_chart(fig)
+
