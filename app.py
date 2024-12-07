@@ -32,6 +32,7 @@ if st.checkbox('Generar grafico de dispersion'): # si la casilla de verificació
 if st.checkbox('Generar grafico de barra'): # si la casilla de verificación está seleccionada
     st.write('Construir un grafico de barra para la columna odómetro')
 
-    fig = px.bar(car_data, x='odometer', y='price')
+    fig = px.bar(car_data, x='type', pattern_shape='type', color='type', 
+                 color_discrete_sequence=px.colors.qualitative.Set1,)
     st.plotly_chart(fig)
 
